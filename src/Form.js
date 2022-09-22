@@ -8,7 +8,16 @@ const Form = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
 
-        fetch(scriptUrl, {method: 'POST', body: new FormData(formRef.current)})
+        let form = new FormData(formRef.current)
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = mm + '/' + dd + '/' + yyyy;
+
+        form.append('Date', today)
+
+        fetch(scriptUrl, {method: 'POST', body: form})
         .then(res => {
             console.log("SUCCESSFULLY SUBMITTED")
         })
@@ -30,18 +39,18 @@ const Form = () => {
             <form method="post" onSubmit={handleSubmit} ref={formRef} name="google-sheet">
 
             <div className="form-style">
-                <textarea type=""  name="story" placeholder='Your Question' />
+                <textarea type=""  name="Question" placeholder='Your Question' />
             </div> 
             <h4 className='pb-0 '>Your contact info</h4>
             <h6>We'll be in touch if we look into your question.</h6>
             <div className="form-style">
-                <input type="" id="name"  name="name" placeholder='Name' />
+                <input type="" id="name"  name="Name" placeholder='Name' />
             </div>  
             <div className="form-style">
-                <input type="email" name="email" placeholder='Email address' />
+                <input type="email" name="Email" placeholder='Email address' />
             </div>
             <div className="form-style">
-                <input type="number" name="form" placeholder='Phone number' />
+                <input type="number" name="Phone Number" placeholder='Phone number' />
             </div>
  
             <div className="form-style">
