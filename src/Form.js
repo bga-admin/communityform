@@ -27,18 +27,23 @@ const Form = () => {
 
   return (
     <div>
-        <div className='grey pb-4 container pt-3' ><h1 className='wtg'>WHAT THE GOV?</h1>
+        <div style={{ backgroundColor: "#133b63"}}>
+        <img className='' src='/BGA_Policy_Mock.png'></img>
+
+        </div>
+
+        <div className='grey container pt-3' >
 
             <p>What do you want to know or share about Chicago or Illinois politics and government?</p>
-            <p className='submitbelow'>Submit below!</p>
-            <p>For more on our <span className='hashtag'><a href='www.bettergov.org'>#WhatTheGov</a></span> coverage, visit bettergov.org.</p>
-            <img src='/bga.png'></img>
+            <p className=''><b>Submit below!</b></p>
+            {/* <p>For more on our <span className='hashtag'><a href='www.bettergov.org'>#WhatTheGov</a></span> coverage, visit bettergov.org.</p> */}
+            {/* <img src='/bga.png'></img> */}
         </div>
-        <div className='pt-5'>
+        <div className='pt-5 px-lg-5 mx-lg-5'>
 
-            <form method="post" onSubmit={handleSubmit} ref={formRef} name="google-sheet">
+            <form method="post" className='px-lg-5 mx-lg-5' onSubmit={handleSubmit} ref={formRef} name="google-sheet">
 
-            <div className="form-style">
+            <div className="form-style ">
                 <textarea type=""  name="Question" placeholder='Your Question' />
             </div> 
             <h4 className='pb-0 '>Your contact info</h4>

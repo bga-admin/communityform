@@ -21,7 +21,7 @@ code {
 font-weight: 500;
 font-style: normal;
 color:#003A63;
-border-bottom: #FFC107 solid;
+border-bottom: #F6AE2D solid;
 font-size: larger;
 }
 
@@ -38,7 +38,7 @@ h1{
 }
 
 img{
-  width: 75% !important;
+  width: 40% !important;
 }
 
 form > *{
@@ -56,7 +56,7 @@ h4, h6{
 }
 
 #button{
-  background: #FFC107;
+  background: #F6AE2D;
   font-weight: 600;
   color:#003A63;
   border: none;
